@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+local_config.json
+cookies.json
+state.json
+dashboard_screenshot.png
+chart_data/
+downloads/
+.streamlit/
+terminals/
