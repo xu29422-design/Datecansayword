@@ -1,4 +1,3 @@
-# System dependencies for Playwright on Debian/Ubuntu (Streamlit Cloud)
 libasound2
 libatk-bridge2.0-0
 libatk1.0-0
@@ -33,7 +32,6 @@ libxtst6
 ca-certificates
 fonts-liberation
 libappindicator3-1
-libnss3
 lsb-release
 xdg-utils
 wget
