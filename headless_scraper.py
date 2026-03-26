@@ -1,7 +1,13 @@
 import json
 import time
 from playwright.sync_api import sync_playwright
-from playwright_stealth import stealth_sync
+
+try:
+    from playwright_stealth import stealth_sync
+    HAS_STEALTH = True
+except ImportError as e:
+    print(f"Warning: playwright_stealth could not be imported: {e}")
+    HAS_STEALTH = False
 
 def run_scraper(target_url, cookie_json_str):
     """
@@ -44,7 +50,8 @@ def run_scraper(target_url, cookie_json_str):
                 context.add_cookies(cookies)
                 
             page = context.new_page()
-            stealth_sync(page)
+            if HAS_STEALTH:
+                stealth_sync(page)
             page.on("response", handle_response)
             
             print(f"🌐 Visiting target URL: {target_url}")
